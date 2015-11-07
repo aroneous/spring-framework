@@ -363,7 +363,7 @@ public abstract class WebApplicationContextUtils {
 
 		@Override
 		public HttpSession getObject() {
-			return currentRequestAttributes().getRequest().getSession();
+			return (HttpSession) currentRequestAttributes().resolveReference("session");
 		}
 
 		@Override
